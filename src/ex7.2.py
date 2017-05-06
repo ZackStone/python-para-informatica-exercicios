@@ -7,11 +7,15 @@
 # Quando você alcançar o fim do arquivo, imprima a confiança média de spam.
 # Teste seu programa sobre os arquivos mbox.txt e mbox-short.txt.
 
+import os
+curpath = os.path.dirname(os.path.abspath(__file__))
+filepath = curpath + '/../data/'
+
 fhand = None
 while fhand == None:
 	filename = input('Nome do arquivo: ')
 	try:
-		fhand = open('data/' + filename)
+		fhand = open(filepath + filename)
 	except:
 		print('Arquivo não encontrado.')
 

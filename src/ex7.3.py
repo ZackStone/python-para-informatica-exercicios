@@ -5,14 +5,18 @@
 # O programa deve se comportar normalmente para todos os outros arquivos que existem ou 
 # que não existem.
 
+import os
+curpath = os.path.dirname(os.path.abspath(__file__))
+filepath = curpath + '/../data/'
+
 fhand = None
 while fhand == None:
 	filename = input('Nome do arquivo: ')
 	if filename == 'na na boo boo':
-		print('NA NA BOO BOO TO YOU! you have been punk''d')
+		print('NA NA BOO BOO TO YOU! you have been punk\'d')
 	else:
 		try:
-			fhand = open('data/' + filename)
+			fhand = open(filepath + filename)
 		except:
 			print('Arquivo não encontrado.')
 
